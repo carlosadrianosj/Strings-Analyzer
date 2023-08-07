@@ -1,4 +1,5 @@
 import os
+import sys
 import zipfile
 import rarfile
 import gzip
@@ -46,8 +47,14 @@ def extract_files_in_directory(search_directory):
             elif filename.lower().endswith(".7z"):
                 extract_7z(file_path, output_path)
 
-# Caminho do diretório onde a busca será realizada
-search_directory = "/mnt/c/Users/cjorge/Documents/python file search/analise/123/teste"
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Uso: python Extract_Compression.py <directory_path>")
+        sys.exit(1)
 
-# Chama a função para extrair arquivos
-extract_files_in_directory(search_directory)
+    search_directory = sys.argv[1]
+    if not os.path.exists(search_directory):
+        print(f"Error: Diretório '{search_directory}' não existe.")
+        sys.exit(1)
+
+    extract_files_in_directory(search_directory)
