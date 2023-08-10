@@ -6,7 +6,7 @@ import gzip
 import shutil
 import py7zr
 
-# Função para extrair arquivos zip
+#  Função para extrair arquivos zip
 def extract_zip(file_path, output_path):
     with zipfile.ZipFile(file_path, 'r') as zip_ref:
         zip_ref.extractall(output_path)
