@@ -7,7 +7,7 @@ import csv
 
 def create_parser():
     '''
-    Função para criar um ArgumentParser para lidar com argumentos da linha de comando.
+    Função para criar um ArgumentParser para lidar com argumentos da linha de  comando.
     '''
     parser = argparse.ArgumentParser(description='Busca strings em arquivos dentro de um diretório.')
     parser.add_argument('dir', type=str, help='O diretório onde a busca será realizada.')
